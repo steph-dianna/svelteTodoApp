@@ -1,68 +1,37 @@
-*Psst — looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)*
+# *ToDo App*
 
----
-
-# svelte app
-
-This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template.
-
-To create a new project based on this template using [degit](https://github.com/Rich-Harris/degit):
-
-```bash
-npx degit sveltejs/template svelte-app
-cd svelte-app
-```
-
-*Note that you will need to have [Node.js](https://nodejs.org) installed.*
+**ToDo** This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template.
 
 
-## Get started
+## User Stories
 
-Install the dependencies...
+The following **required** functionality is completed:
 
-```bash
-cd svelte-app
-npm install
-```
-
-...then start [Rollup](https://rollupjs.org):
-
-```bash
-npm run dev
-```
-
-Navigate to [localhost:5000](http://localhost:5000). You should see your app running. Edit a component file in `src`, save it, and reload the page to see your changes.
+- [x] User can add task
+- [x] User can delete  task
+- [x] User can restore deleted task
+- [x] User can see task list
+- [x] The app is responsive
 
 
-## Deploying to the web
+## Video Walkthrough
 
-### With [now](https://zeit.co/now)
+Here's a walkthrough of implemented user stories:
 
-Install `now` if you haven't already:
+<img src='gift'  />
 
-```bash
-npm install -g now
-```
+GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
-Then, from within your project folder:
 
-```bash
-now
-```
+## Development server
 
-As an alternative, use the [Now desktop client](https://zeit.co/download) and simply drag the unzipped project folder to the taskbar icon.
+* Note that you will need to have [Node.js](https://nodejs.org) installed.
+* Clone repository
+* Run npm install 
+* npm run dev
+* Navigate to [localhost:5000](http://localhost:5000).
 
-### With [surge](https://surge.sh/)
 
-Install `surge` if you haven't already:
+## License
 
-```bash
-npm install -g surge
-```
-
-Then, from within your project folder:
-
-```bash
-npm run build
-surge public
-```
+  Copyright [2023] [Stephanie Dianna Paul]
