@@ -79,7 +79,7 @@
     .logo {
         display: block;
         margin: 20px auto;
-        width: 50%;
+        width: 70%;
     }
     .todo-input {
         width: 100%;
@@ -123,7 +123,7 @@
     <img class="logo" src={'/img/CTSWLogo.png'} alt="CodingTheSmartWay Logo">
 
     <h2>Svelte Todo App</h2>
-    <input type="text" class="todo-input" placeholder="Insert todo item ..." bind:value={newTodoTitle} on:keydown={addTodo} >
+    <input type="text" class="todo-input" placeholder="Inserer todo item ..." bind:value={newTodoTitle} on:keydown={addTodo} >
 
     {#each filteredTodos as todo}
         <div class="todo-item">
