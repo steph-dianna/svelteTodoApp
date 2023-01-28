@@ -1,10 +1,8 @@
 <script>
     import TodoItem from './TodoItem.svelte';
-
     let newTodoTitle = '';
     let currentFilter = 'all';
     let nextId = 4;
-
     let todos = [
         {
             id: 1,
@@ -22,7 +20,6 @@
             completed: false
         }
     ];
-
     function addTodo(event) {
         if (event.key === 'Enter') {
             todos = [...todos, {
@@ -30,39 +27,30 @@
                 completed: false,
                 title: newTodoTitle
             }];
-
             nextId = nextId + 1;
             newTodoTitle = '';
         }
     }
-
     $: todosRemaining = filteredTodos.filter(todo => !todo.completed).length;
     $: filteredTodos = currentFilter === 'all' ? todos : currentFilter === 'completed'
         ? todos.filter(todo => todo.completed)
         : todos.filter(todo => !todo.completed)
-
-
     function checkAllTodos(event) {
         todos.forEach(todo => todo.completed = event.target.checked);
         todos = todos;
     }
-
     function updateFilter(newFilter) {
         currentFilter = newFilter;
     }
-
     function clearCompleted() {
         todos = todos.filter(todo => !todo.completed);
     }
-
     function handleDeleteTodo(event) {
         todos = todos.filter(todo => todo.id !== event.detail.id);
     }
-
     function handleToggleComplete(event) {
         const todoIndex = todos.findIndex(todo => todo.id === event.detail.id);
         const updatedTodo = { ...todos[todoIndex], completed: !todos[todoIndex].completed};
-
         todos = [
             ...todos.slice(0, todoIndex),
             updatedTodo,
@@ -71,19 +59,41 @@
     }
 </script>
 
+
 <style>
+
+
+
+    h2{
+        font-size: 3rem;
+       margin-top: -30px;
+        margin: center;
+        margin-left: 50px;
+        color:  lightseagreen;
+    }
+    
+
     .container {
-        max-width: 800px;
-        margin: 10px auto;
+        max-width: 1200px;
+        max-height: 800px;
+        margin: center;
+        margin-left: 10px;
+        margin-right: 30px;
+        margin: 5rem;
+        box-shadow: 0 10px 20px  lightseagreen
+    
     }
     .logo {
         display: block;
-        margin: 20px auto;
-        width: 70%;
+        margin: 40px auto;
+        width: 50%;
+        padding: 20px;
     }
     .todo-input {
-        width: 100%;
+        width: 90%;
         padding: 10px, 20px;
+        margin-left: 40px;
+        margin-right: 20px;
         font-size: 18px;
         margin-bottom: 20px;
     }
@@ -92,28 +102,28 @@
         align-items: center;
         justify-content: space-between;
         font-size: 16px;
-        border-top: 1px solid lightgrey;
+        margin-right: 50px;
+        margin-left: 50px;
+        border-top: 1px solid rgb(3, 3, 3);
         padding-top: 15px;
         margin-bottom: 13px;
     }
     .inner-container-input {
-        margin-right: 12px;
+        margin-right: 10px;
+        margin-left: 10px;
     }
-
     button {
         font-size: 14px;
         background-color: white;
         appearance: none;
+        margin-right: 15px;
     }
-
     button:hover {
         background: lightseagreen;
     }
-
     button:focus {
         outline: none;
     }
-
     .active {
         background: lightseagreen;
     }
@@ -123,7 +133,7 @@
     <img class="logo" src={'/img/CTSWLogo.png'} alt="CodingTheSmartWay Logo">
 
     <h2>Svelte Todo App</h2>
-    <input type="text" class="todo-input" placeholder="Inserer todo item ..." bind:value={newTodoTitle} on:keydown={addTodo} >
+    <input type="text" class="todo-input" placeholder="Insert new task ..." bind:value={newTodoTitle} on:keydown={addTodo} >
 
     {#each filteredTodos as todo}
         <div class="todo-item">

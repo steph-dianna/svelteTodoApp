@@ -28,15 +28,17 @@
         align-items: center;
         justify-content: space-between;
         animation-duration: 0.3s;
+        margin-left: 50px;
     }
 
     .remove-item {
         cursor: pointer;
-        margin-left: 15px;
+        margin-left: 25px;
+        margin-right: 50px;
     }
 
     .remove-item:hover {
-        color: lightseagreen; 
+        color: rgb(230, 31, 31); 
     }
 
     .todo-item-left {
@@ -46,12 +48,14 @@
 
     .todo-item-label {
         border: 1px solid white;
-        margin-left: 12px;
+        margin-left: 10px;
     }
 
     .completed {
         text-decoration: line-through;
-        color: grey;
+        color: rgb(121, 118, 118);
+        margin-right: 50px;
+        margin-left: 50px;
     }
 </style>
 
